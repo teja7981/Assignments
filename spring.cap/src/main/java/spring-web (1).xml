@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<context:component-scan base-package="com.jspider.springbasics"></context:component-scan>
+
+	<bean id="address" class="com.jspider.springbasics.Address">
+		<property name="city" value="bangalore"></property>
+		<property name="state" value="karnataka"></property>
+		<property name="country" value="india"></property>
+	</bean>
+	
+	<bean id="employee" class="com.jspider.springbasics.Employee">
+		<property name="id" value="101"></property>
+		<property name="name" value="sachin"></property>
+		<property name="salary" value="40000"></property>
+		<property name="mobileNumber">
+			<list>
+				<value>1234567</value>
+				<value>456788</value>
+				<value>98667783</value>
+			</list>
+		</property>
+		<property name="address" ref="address"></property>
+	</bean>
+
+	<bean id="movie" class="com.jspider.springbasics.Movie">
+			<constructor-arg name="movieName" value="rrr"></constructor-arg>
+			<constructor-arg name="ratings" value="4"></constructor-arg>
+			<constructor-arg name="language" value="telugu"></constructor-arg>
+	</bean>
+
+</beans>
+
+
+
